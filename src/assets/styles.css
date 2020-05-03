@@ -19,6 +19,10 @@
   transition-duration: 300ms;
 }
 
+.rs-widget.rs-closed {
+  background-color: rgba(0, 0, 0, 0);
+}
+
 .rs-widget * {
   box-sizing: border-box;
 }
@@ -45,8 +49,8 @@
 /* Main logo */
 .rs-main-logo {
   float: left;
-  height: 36px;
-  width: 36px;
+  height: 24px;
+  width: 24px;
   margin-top: 1px;
   margin-right: 0.625em;
   transition: margin-left 300ms ease-out, transform 300ms ease-out;
