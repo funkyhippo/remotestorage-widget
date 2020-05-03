@@ -20,7 +20,7 @@
 }
 
 .rs-widget.rs-closed {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0) !important; /* Okay you win */
 }
 
 .rs-widget * {
@@ -49,8 +49,10 @@
 /* Main logo */
 .rs-main-logo {
   float: left;
-  height: 24px;
-  width: 24px;
+  height: 100%;
+  width: 100%;
+  max-height: 36px;
+  max-width: 36px;
   margin-top: 1px;
   margin-right: 0.625em;
   transition: margin-left 300ms ease-out, transform 300ms ease-out;
@@ -371,6 +373,7 @@ polygon.rs-logo-shape,
     font-size: 100%;
     transition: all 300ms ease-out;
     max-width: 400px;
+    padding: 10px 0 10px 0;
   }
   .rs-floating {
     position: relative;
@@ -382,11 +385,7 @@ polygon.rs-logo-shape,
   }
   .rs-state-choose,
   .rs-state-sign-in {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    max-width: 100%;
+    max-width: 90vw;
   }
 }
 
