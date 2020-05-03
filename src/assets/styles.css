@@ -108,6 +108,8 @@ polygon.rs-logo-shape,
 
 .rs-box-initial {
   transition-duration: 0ms;
+  flex-direction: row;
+  display: flex;
 }
 
 .rs-box-initial:hover {
@@ -208,6 +210,11 @@ polygon.rs-logo-shape,
   float: none;
 }
 
+.rs-state-choose.rs-closed .rs-main-logo,
+.rs-state-sign-in.rs-closed .rs-main-logo {
+  margin-left: 0%;
+}
+
 .rs-sign-in-form input[type=text] {
   padding: 15px 10px;
   display: block;
@@ -290,6 +297,14 @@ polygon.rs-logo-shape,
   margin-top: 0;
   margin-bottom: 20px;
   line-height: 1.4em;
+}
+
+.rs-closed .rs-box-choose {
+  max-height: 0px;
+}
+
+.rs-closed .rs-box-sign-in {
+  max-height: 0px;
 }
 
 /*Connected box */
