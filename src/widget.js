@@ -6,7 +6,7 @@
  * @param {object}  options                - Widget options
  * @param {boolean} options.leaveOpen      - Do not minimize widget when user clicks outside of it (default: false)
  * @param {number}  options.autoCloseAfter - Time after which the widget closes  automatically in ms (default: 1500)
- * @param {boolean} options.skipInitial    - Don't show the initial connect hint, but show sign-in screen directly instead (default: false)
+ * @param {boolean} options.skipInitial    - Don't show the initial connect hint, but show sign-in screen directly instead (default: true)
  * @param {boolean} options.logging        - Enable logging (default: false)
  * @param {boolean,string} options.modalBackdrop - Show a dark, transparent backdrop when opening the widget for connecting an account. (default 'onlySmallScreens')
  */
@@ -15,7 +15,7 @@ let Widget = function(remoteStorage, options={}) {
 
   this.leaveOpen      = options.leaveOpen ? options.leaveOpen : false;
   this.autoCloseAfter = options.autoCloseAfter ? options.autoCloseAfter : 1500;
-  this.skipInitial    = options.skipInitial ? options.skipInitial : false;
+  this.skipInitial    = options.skipInitial ? options.skipInitial : true;
   this.logging        = options.logging ? options.logging : false;
 
   if (options.hasOwnProperty('modalBackdrop')) {
@@ -415,12 +415,15 @@ Widget.prototype = {
     // don't do anything when we have an error
     if (this.state === 'error') { return; }
 
-    if (!this.leaveOpen && this.active) {
+    if (!this.leaveOpen) {
       this.closed = true;
       this.rsWidget.classList.add('rs-closed');
       let selected = document.querySelector('.rs-box.rs-selected');
       if (selected) {
         selected.setAttribute('aria-hidden', 'true');
+      }
+      if (!this.active) {
+        this.setInitialState();
       }
     } else if (this.active) {
       this.setState('connected');
