@@ -154,6 +154,9 @@ Widget.prototype = {
    * @private
    */
   setInitialState () {
+    if (!this.closed) {
+      this.close();
+    }
     if (this.skipInitial) {
       this.showChooseOrSignIn();
     } else {
