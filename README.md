@@ -32,7 +32,7 @@ The widget has some configuration options to customize the behavior:
 |---|---|---|---|
 | `leaveOpen` | Keep the widget open when user clicks outside of it | Boolean | `false` |
 | `autoCloseAfter` | Timeout after which the widget closes automatically (in milliseconds). The widget only closes when a storage is connected. | Number | `1500` |
-| `skipInitial` | Don't show the initial connect hint, but show sign-in screen directly instead | Boolean | `false` |
+| `skipInitial` | Don't show the initial connect hint, but show sign-in screen directly instead | Boolean | `true` |
 | `logging` | Enable logging for debugging purposes | Boolean | `false` |
 | `modalBackdrop` | Show a dark, transparent backdrop when opening the widget for connecting an account. `true` shows backdrop everywhere, `false` turns it off everywhere. Default is to only show it on small screens. | Boolean, String | `"onlySmallScreens"` |
 
