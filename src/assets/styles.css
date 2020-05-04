@@ -372,8 +372,11 @@ polygon.rs-logo-shape,
   .rs-widget {
     font-size: 100%;
     transition: all 300ms ease-out;
-    max-width: 400px;
-    padding: 10px 0 10px 0;
+    max-width: 90vw;
+    padding: 10px 5px 10px 5px;
+  }
+  .rs-closed.rs-widget {
+    padding: 10px 10px 10px 10px;
   }
   .rs-floating {
     position: relative;
